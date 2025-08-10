@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forest Fire Weather Index Prediction - Info</title>
+
+  <!-- Bootstrap 5 CSS CDN for clean, modern styling -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background: #f7fafc;
+      color: #334e68;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #1c658c;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(28, 101, 140, 0.3);
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(99, 130, 191, 0.15);
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #1c658c;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid #d1e7ff;
+      padding-bottom: 0.25rem;
+    }
+    p, ul {
+      font-size: 1.1rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    a {
+      color: #ff0000;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .btn-primary {
+      background-color: #5d6073;
+      border: none;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.15rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(0, 174, 255);
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .btn-primary:hover {
+      background-color: #fbfbfb;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 1rem;
+      color: #7a8a99;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Forest Fire Weather Index Prediction</h1>
+    <p>Your tool for predicting fire risk based on meteorological data</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About the Dataset</h2>
+      <p>This application uses the <a href="https://www.kaggle.com/datasets/maheshkamath/algerian-forest-fires-dataset" target="_blank" rel="noopener">Algerian Forest Fires Dataset</a>, which contains meteorological and environmental variables collected to analyze forest fire activity in Algeria. The key features include:</p>
+      <ul>
+        <li>Temperature (°C)</li>
+        <li>Relative Humidity (%)</li>
+        <li>Wind Speed (m/s)</li>
+        <li>Rainfall (mm)</li>
+        <li>Fine Fuel Moisture Code (FFMC)</li>
+        <li>Duff Moisture Code (DMC)</li>
+        <li>Initial Spread Index (ISI)</li>
+        <li>Class and Region codes indicating categorical information</li>
+      </ul>
+      <p>The main target variable predicted is the <strong>Fire Weather Index (FWI)</strong>, a numerical indicator that helps estimate the risk and intensity of forest fires based on fire behavior modeling.</p>
+    </section>
+
+    <section>
+      <h2>About the Prediction Model</h2>
+      <p>Using modern machine learning techniques, a Ridge Regression model was trained on this dataset after appropriate preprocessing, including removing highly correlated features and feature scaling. This model takes the nine key features above as input and predicts the Fire Weather Index, aiding in fire risk assessment.</p>
+      <p>The model has been saved along with the scaler to ensure consistent and accurate predictions on new input data.</p>
+    </section>
+
+    <section>
+      <h2>How to Use This Application</h2>
+      <p>Navigate to the prediction page by clicking the button below. Enter the meteorological and categorical feature values into the form and submit to obtain a predicted Fire Weather Index for your input conditions.</p>
+      <a href="/predictdata" class="btn-primary" role="button">Go to Prediction Form</a>
+      <p><small>If your app is configured to use the root URL for prediction, change the link above to <code>"/"</code>.</small></p>
+    </section>
+
+    <section>
+      <h2>Understanding Fire Weather Index (FWI)</h2>
+      <p>The Fire Weather Index is a key metric widely used in forest fire management. It integrates weather factors like temperature, humidity, wind, and precipitation to estimate the potential severity and spread rate of forest fires. The FWI is classified into several risk levels, typically:</p>
+      <ul>
+        <li>Very Low (FWI &lt; 5.2)</li>
+        <li>Low (5.2 – 11.2)</li>
+        <li>Moderate (11.2 – 21.3)</li>
+        <li>High (21.3 – 38.0)</li>
+        <li>Very High (38.0 – 50.0)</li>
+        <li>Extreme (&ge; 50)</li>
+      </ul>
+      <p>This application predicts the continuous FWI value to support early fire risk evaluation and preparedness.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Fire Weather Prediction App. Developed by Your Name.
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle (optional for components like modals) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
